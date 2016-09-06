@@ -1,0 +1,71 @@
+<layout name="header"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="starter-template">
+        <h2 class="page-header" align="left">编辑作业</h2>
+
+        <form class="form-signin" action="{:U('Homework/saveHw')}?id={$hw.id}" method="post">
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">作业标题</label>
+                <div class="col-lg-10 ">
+                    <input type="name1" class="form-control input-lg" id="name" name="title" value="{$hw.title}"
+                           placeholder="请输入作业标题" required autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10"></div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">作业内容</label>
+                <div class="col-lg-10 ">
+                    <textarea type="name2" class="form-control" rows="9" name="content">{$hw.content}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">作业日期</label>
+                <div class="col-lg-10 ">
+                    <input type="name3" class="form-control input-lg" name="date" value="{$hw.date}"
+                           placeholder="请输入作业日期" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="text" class="col-lg-2 control-label">所选班级</label>
+                <div class="col-lg-7" >
+                    <div id="loading"><p>loading...</p></div>
+                    <div class="checkbox" id="checkId">
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-6" style="padding-top: 20px">
+                    <button type="submit"  class="btn btn-lg btn-primary">保存</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+
+    $(function () {
+        $.post('{:U("/Admin/Api/course_class")}', {key: "{$hw.course_id}",id:"{$hw.id}"}, function (data) {
+            $("#loading").hide();
+
+            $.each(data.result[0], function (index, value) {
+                $("div#checkId").append("<div style=\"float:left;padding:0 5px;\"><label><input type='checkbox' value='" + value.class_id + "' name='class_id_" + value.class_id + "'>" + value.class_name + "</label></div>");
+            });
+            $.each(data.result[1],function (inde,valu) {
+                $(":checkbox[value='"+valu+"']").prop("checked",true);
+            });
+        });
+
+    });
+</script>
+</body>
+</html>

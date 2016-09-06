@@ -1,0 +1,42 @@
+<div class="col-center-block text-center">
+<ul class="pagination">
+    <php>
+        $url = $current_url;
+        $start = $page_current - 2;
+        $end = $page_current + 2;
+
+        if ($start <= 2) $start = 1;
+        if ($end >= $page_number - 2) $end = $page_number;
+
+        if ($start != 1) {
+        echo_u(1,$page_current);
+        echo_dot();
+        }
+
+        for ($li = $start; $li < $end+1; $li++)
+        echo_u($li,$page_current);
+
+        if ($end != $page_number) {
+        echo_dot();
+        echo_u($page_number,$page_current);
+        }
+
+        function echo_u($i,$page_current){
+        if ($i != $page_current)
+        echo_url($i);
+        else
+        echo_act_url($i);
+        }
+
+        function echo_url($i){
+        echo "<li><a href='" . $url . "?page=" . $i . "'>".$i."</a></li>";
+        }
+        function echo_dot(){
+        echo "<li><a href='#'>...</a></li>";
+        }
+        function echo_act_url($i){
+        echo "<li class=\"active\"><a href='" . $url . "?page=" . $i . "'>".$i."</a></li>";
+        }
+    </php>
+</ul>
+</div>

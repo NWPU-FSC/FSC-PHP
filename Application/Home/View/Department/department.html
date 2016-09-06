@@ -1,0 +1,41 @@
+<layout name="layoutDepartment" xmlns="http://www.w3.org/1999/html"/>
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="content">
+    <div style="font-family:微软雅黑;font-size:15px">
+        <h2><strong>{$data.name}</strong></h2>
+         
+        <ol><h4>其主要职能是：</h4></ol>
+         
+        <ol><h4 style="text-indent: 2em">{$data.description}</h4></ol>
+        <ol><h4>地址：{$data.location}</h4></ol>
+
+        <h3>人员信息表</h3>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th width="150">姓名</th>
+                <th width="225">职位</th>
+                <th width="225">联系电话</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="teacher" id="teacher">
+                <tr>
+                    <td>{$teacher.tname}</td>
+                    <td>{$teacher.position}</td>
+                    <td>{$teacher.phone}</td>
+                </tr>
+            </volist>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+</body>
+</html>

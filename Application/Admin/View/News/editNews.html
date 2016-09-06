@@ -1,0 +1,65 @@
+<layout name="header" />
+
+<script type="text/javascript">
+    $(function() {
+        $.post('http://localhost/admin/api/news_type', {}, function (data) {
+            $.each(data['result'], function (index, value) {
+                $("#selectId").append("<option value='" + value.id + "'> " + value.name + " </option>");
+                $('#selectId').val("{$data.type}");
+            });
+        }, 'json');
+    });
+</script>
+
+<div class="container">
+    <div class="starter-template">
+
+        <h2 class="page-header" align="left">编辑公告</h2>
+
+        <form class="form-signin" action="{:U('News/saveNews')}?id={$data.id}" method="post">
+            <div class="form-group">
+                <label  for="name" class="col-lg-2 control-label">消息标题</label>
+                <div class="col-lg-10 ">
+                    <input type="text" class="form-control input-lg" name="title" id="name" value="{$data.title}" placeholder="请输入消息标题"required autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10"> </div>
+            </div>
+            <div class="form-group">
+                <label for="name"class="col-lg-2 control-label">消息内容</label>
+                <div class="col-lg-10 ">
+                    <textarea name="content" class="form-control"  rows="13">{$data.content}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <label for="name"  class="col-lg-2 control-label">消息类型</label>
+                <div  class="col-lg-10">
+                    <select class="form-control" name="type" id="selectId">
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <label for="name"  class="col-lg-12 control-label"></label>
+                <div  class="col-lg-10">
+
+                </div>
+            </div>
+            <div class="form-group" >
+                <div class="col-lg-offset-2 col-lg-1">
+                    <button  type="submit" class="btn  btn-primary  ">保存</button>
+                </div>
+                <!--<div class="col-lg-1">-->
+                    <!--<button  type="submit" class="btn  btn-primary  ">发送</button>-->
+                <!--</div>-->
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

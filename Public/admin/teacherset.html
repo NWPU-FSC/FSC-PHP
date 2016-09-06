@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>教师管理</title>
+<!-- Bootstrap core CSS -->
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/css.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">FSC</a> </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 班级管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">14011301班</a></li>
+            <li><a href="#">14011302班</a></li>
+            <li><a href="#">14011303班</a></li>
+            <li><a href="#">14011304班</a></li>
+          </ul>
+        </li>
+        <li> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 作业管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="homeworklist.html">作业列表</a></li>
+            <li><a href="assignhomework.html">布置作业</a></li>
+          </ul>
+        </li>
+        <li  class="dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 通知管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="noticelist.html">通知列表</a></li>
+            <li><a href="assignnotice.html">发布通知</a></li>
+          </ul>
+        </li>
+        <li class="dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 留言管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="sendmessagelist.html">发出的留言</a></li>
+            <li><a href="receivemessagelist.html">接收的留言</a></li>
+            <li><a href="sendmesage.html">发送留言</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown active "> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 个人管理 <b class="caret"></b> </a>
+          <ul class="dropdown-menu">
+            <li><a href="teacher.html">
+              <p class=" navbar-right">个人主页</p>
+              </a></li>
+            <li><a href="#">
+              <p class=" navbar-right">我的消息</p>
+              </a></li>
+            <li><a href="#">
+              <p class=" navbar-right">
+                <button type="button" class="btn btn-primary navbar-btn"> 退出 </button>
+              </p>
+              </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+<div class="container">
+  <div class="starter-template">
+    <form class="form-signin">
+      <div class="form-group">
+        <label  for="name" class="col-lg-2 control-label">学历</label>
+        <div class="col-lg-10 ">
+          <input type="name1" class="form-control input-lg" id="name" placeholder="请输入您的学历"required autofocus>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10"> </div>
+      </div>
+      <div class="form-group">
+        <label for="name"class="col-lg-2 control-label">毕业院校</label>
+        <div class="col-lg-10 ">
+         <input type="name2" class="form-control input-lg" id="name" placeholder="请输入您的毕业院校" required > 
+        </div>
+      </div>
+      <div class="form-group">
+        <label  for="name" class="col-lg-2 control-label">电话</label>
+        <div class="col-lg-10 ">
+          <input type="name2" class="form-control input-lg" id="name" placeholder="请输入您的电话" required >
+        </div>
+      </div>
+     <div class="form-group">
+        <label  for="name" class="col-lg-2 control-label">邮箱</label>
+        <div class="col-lg-10 ">
+          <input type="name2" class="form-control input-lg" id="name" placeholder="请输入您的邮箱" required >
+        </div>
+      </div>
+	  <div class="form-group">
+        <label  for="name" class="col-lg-2 control-label">所带班级</label>
+        <div class="col-lg-10 ">
+          <input type="name2" class="form-control input-lg" id="name" placeholder="请输入您所带的班级" required >
+        </div>
+      </div>
+	  <div class="form-group">
+        <label for="name"class="col-lg-2 control-label">个人简介</label>
+        <div class="col-lg-10 ">
+          <textarea type="name3" class="form-control" rows="9"   ></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-1">
+          <button  class="btn  btn-primary  ">确定</button>
+        </div>
+        <div class="col-lg-1">
+          <button  class="btn  btn-primary  ">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- /.container -->
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

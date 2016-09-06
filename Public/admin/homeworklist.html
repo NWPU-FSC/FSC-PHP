@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>教师管理</title>
+<!-- Bootstrap core CSS -->
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/css.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">FSC</a> </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 班级管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">14011301班</a></li>
+            <li><a href="#">14011302班</a></li>
+            <li><a href="#">14011303班</a></li>
+            <li><a href="#">14011304班</a></li>
+          </ul>
+        </li>
+        <li class="dropdown active"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 作业管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="homeworklist.html">作业列表</a></li>
+            <li><a href="assignhomework.html">布置作业</a></li>
+          </ul>
+        </li>
+                <li> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 通知管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="noticelist.html">通知列表</a></li>
+            <li><a href="assignnotice.html">发布通知</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="liuyanguanli.html"> 留言管理 <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="sendmessagelist.html">发出的留言</a></li>
+            <li><a href="receivemessgelist.html">接收的留言</a></li>
+            <li><a href="sendmessage.html">发送留言</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 个人管理 <b class="caret"></b> </a>
+          <ul class="dropdown-menu">
+            <li><a href="teacher.html">
+              <p class=" navbar-right"><button type="button" class="btn btn-primary navbar-btn"> 个人主页 </button></p>
+              </a></li>
+            <li><a href="#">
+              <p class=" navbar-right">
+                <button type="button" class="btn btn-primary navbar-btn"> 退出 </button>
+              </p>
+              </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+<div class="container " style="padding-top:40px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">作业列表</div>
+        </div>
+        <div class="bootstrap-admin-panel-content">
+          <table class="table table-hover" style="vertical-align:middle;">
+            <thead>
+              <tr>
+                <th width="13"></th>
+				<th width="180">科目</th>
+                <th width="250">作业标题</th>
+                <th width="170" >作业日期</th>
+                <th width="250" >班级</th>
+                <th width="200" >操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="checkbox" /></td>
+				<td>语文</td>
+                <td>背诵古诗</td>
+                <td>2016-06-24</td>
+                <td>14011301/14011302班</td>
+                <td class="actions"><a href="#">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="#">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="checkbox" />
+                </td>
+				<td>语文</td>
+                <td>抄写单词</td>
+                <td>2016-06-25</td>
+                <td>14011303班</td>
+                <td class="actions"><a href="">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="checkbox" />
+                </td>
+				<td>语文</td>
+                <td>第一单元课后习题</td>
+                <td>2016-06-26</td>
+                <td>14011301/14011302/14011303班</td>
+                <td class="actions"><a href="">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="checkbox" /></td>
+				<td>语文</td>
+                <td>背诵古诗</td>
+                <td>2016-06-27</td>
+                <td>14011301/14011302班</td>
+                <td class="actions"><a href="#">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="#">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="checkbox" />
+                </td>
+				<td>语文</td>
+                <td>抄写单词</td>
+                <td>2016-06-28</td>
+                <td>14011303班</td>
+                <td class="actions"><a href="">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="checkbox" />
+                </td>
+				<td>语文</td>
+                <td>第一单元课后习题</td>
+                <td>2016-06-29</td>
+                <td>14011301/14011302/14011303班</td>
+                <td class="actions"><a href="">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+			  <tr>
+                <td><input type="checkbox" class="checkbox" /></td>
+				<td>语文</td>
+                <td>背诵古诗</td>
+                <td>2016-06-24</td>
+                <td>14011301/14011302班</td>
+                <td class="actions"><a href="#">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a>  <a href="#">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="checkbox" />
+                </td>
+				<td>语文</td>
+                <td>抄写单词</td>
+                <td>2016-06-25</td>
+                <td>14011303班</td>
+                <td class="actions"><a href="">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="checkbox" />
+                </td>
+				<td>语文</td>
+                <td>第一单元课后习题</td>
+                <td>2016-06-26</td>
+                <td>14011301/14011302/14011303班</td>
+                <td class="actions"><a href="">
+                  <button class="btn btn-sm btn-primary"> <i class="glyphicon glyphicon-pencil"></i> 编辑 </button>
+                  </a> <a href="">
+                  <button class="btn btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i> 删除 </button>
+                  </a> </td>
+              </tr>
+			  
+            </tbody>
+          </table>
+        </div>
+      </div>
+	  
+	  <ul class="pagination">
+  <li><a href="#">&laquo;</a></li>
+  <li class="active"><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+    </div>
+  </div>
+</div>
+</div>
+<!-- /.container -->
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

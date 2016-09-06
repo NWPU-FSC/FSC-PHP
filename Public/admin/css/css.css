@@ -1,0 +1,95 @@
+/* CSS Document */
+
+body {
+    padding-top: 50px;
+    font-family: "Microsoft YaHei", Verdana, Geneva, sans-serif;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.starter-template {
+    padding: 40px 15px;
+    /*text-align: center;*/
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: #CAE1FF;
+}
+
+.form-signin {
+    max-width: 80%;
+    height:auto;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-text{
+    font-size:18px;
+    height:50px;
+}
+
+.form-select{
+    margin-left:15px;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="name1"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="name2"] {
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-signin input[type="name3"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+}
+
+.form-signin textarea[type="name3"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+}
+

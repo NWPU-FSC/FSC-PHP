@@ -1,0 +1,59 @@
+<layout name="header"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div class="container " style="padding-top:0px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header" align="left">作业列表</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="text-muted bootstrap-admin-box-title">作业列表</div>
+                </div>
+                <div class="bootstrap-admin-panel-content">
+                    <table class="table table-hover" style="vertical-align:middle;">
+                        <thead>
+                        <tr>
+                            <th width="13"></th>
+                            <th width="150">　科目</th>
+                            <th width="240">作业标题</th>
+                            <th width="220">作业日期</th>
+                            <th width="380">班级</th>
+                            <th width="180">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="hw" id="hwList">
+                            <tr>
+                                <td></td>
+                                <td>【{$hwList.course_name}】</td>
+                                <td>{$hwList.title}</td>
+                                <td>{$hwList.date}</td>
+                                <td><volist name ="hwList['Class']" id="class">{$class['class_name']}＾</volist></td>
+
+                                <td class="actions"><a
+                                        href="{:U('Homework/editHw')}?id={$hwList.id}">
+                                    <button class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i> 编辑
+                                    </button>
+                                </a> <a href="{:U('Homework/delete')}?id={$hwList.id}" onclick="return confirm('是否确认删除？');">
+                                    <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> 删除
+                                    </button>
+                                </a></td>
+
+                            </tr>
+                       </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="sabrosus">
+                {$page}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

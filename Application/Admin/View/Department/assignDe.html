@@ -1,0 +1,43 @@
+<layout name="header"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div class="container">
+    <div class="starter-template">
+            <h2 class="page-header" align="left">添加部门</h2>
+        <form class="form-signin" action="{:U('Department/add')}" method="post">
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">机构名称</label>
+                <div class="col-lg-10 ">
+                    <input type="name1" class="form-control input-lg" id="name" name="name" placeholder="请输入机构名称"
+                           required autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10"></div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">主要职能</label>
+                <div class="col-lg-10 ">
+                    <textarea type="name2" class="form-control" rows="9" name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">机构地址</label>
+                <div class="col-lg-10 ">
+                    <input type="name3" class="form-control input-lg" id="name" name="location" placeholder="请输入机构地址"
+                           required autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-1">
+                    <button type="submit" class="btn  btn-primary  ">保存</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

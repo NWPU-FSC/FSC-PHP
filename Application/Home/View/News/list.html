@@ -1,0 +1,70 @@
+<layout name="layoutNews"/>
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+            <div class="text-muted bootstrap-admin-box-title" >{$ttt.name}列表</div>
+    </div>
+    <div class="bootstrap-admin-panel-content">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th width="420">标题</th>
+                <th width="170">发布日期</th>
+                <th width="200">作者</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="list" id="news">
+
+                <if condition="$news.is_stick eq 1">
+                    <tr class="info">
+                        <else />
+                    <tr>
+                </if>
+                <td><a href="{:U('News/detail')}?id={$news.id}">{$news.title}</a></td>
+                <td>{$news.time}</td>
+                <td>{$news.name}</td>
+                </tr>
+            </volist>
+            <!--<tr>-->
+                <!--<td><a href="information4.html">杭州外国语学校2016学年第一学期缴费通知</a></td>-->
+                <!--<td>2016-07-13</td>-->
+                <!--<td>徐老师</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td><a href="information4.html">2016年暑假放假通知</a></td>-->
+                <!--<td>2016-06-24</td>-->
+                <!--<td>教务处</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td><a href="information4.html">杭州外国语学校关于近期教学工作调整的通知</a></td>-->
+                <!--<td>2016-06-20</td>-->
+                <!--<td>教务处</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td><a href="information4.html">高二年级选课通知</a></td>-->
+                <!--<td>2016-04-15</td>-->
+                <!--<td>教务处</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td><a href="information4.html">高三一模考试推迟通知</a></td>-->
+                <!--<td>2016-01-22</td>-->
+                <!--<td>教务处</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+<nav>
+    <div class="sabrosus">
+        {$page}
+    </div>
+</nav>
+
+
+</body>
+</html>                           

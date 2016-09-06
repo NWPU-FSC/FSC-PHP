@@ -1,0 +1,59 @@
+<layout name="header"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div class="container" style="padding-top:0px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header" align="left">新闻列表</h2>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <div class="btn-group">
+                        新闻列表
+                    </div>
+                </div>
+
+                <div class="bootstrap-admin-panel-content" style="max-height: 440px;">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th width="130">消息类型</th>
+                            <th width="400">消息标题</th>
+                            <th width="200">发布时间</th>
+                            <th width="200" style="text-align: center">发布人</th>
+                            <th width="180" >操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="list" id="news">
+                            <tr>
+                                <td></td>
+                                <td>【{$news.typename}】</td>
+                                <td>{$news.title}</td>
+                                <td>{$news.time}</td>
+                                <td style="text-align: center">{$news.name}</td>
+                                <td class="actions"><a href="{:U('News/editNews')}?id={$news.id}">
+                                    <button class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i> 编辑
+                                    </button>
+                                </a> <a href="{:U('News/remove')}?id={$news.id}" onclick="return confirm('是否确认删除？');">
+                                    <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> 删除
+                                    </button>
+                                </a></td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="sabrosus">
+                {$page}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

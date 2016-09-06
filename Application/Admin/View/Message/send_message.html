@@ -1,0 +1,66 @@
+<layout name="header" />
+<link rel="stylesheet" href="/Public/html/css/jquery.autocompleter.css">
+
+<div class="container">
+  <div class="starter-template">
+
+    <h2 class="page-header" align="left">发送留言</h2>
+
+
+    <form class="form-signin" method="post" action="{:U('Message/send_message')}">
+      <div class="form-group">
+        <label  for="name" class="col-lg-2 control-label">标题</label>
+        <div class="col-lg-10 ">
+          <input type="text" class="form-control input-lg" id="name" name = "title" placeholder="标题" required >
+        </div>
+      </div>
+      <div class="form-group">
+        <label  for="name" class="col-lg-2 control-label">接收者</label>
+        <div class="col-lg-10 ">
+          <input type="text" class="form-control input-lg" id="real_id" name = "receiver"  placeholder="请输入接收者ID,多个请用;隔开,或者直接在下方选择联系人" autofocus>
+
+        </div>
+
+
+      </div>
+
+      <div class="form-group">
+        <label  for="name" class="col-lg-2 control-label">联系人列表</label>
+        <div class="col-lg-10 ">
+
+          <div style="margin: 10px 10px 20px;">
+
+            <volist name="user_list" id="user">
+              <div style="float:left;padding:0 5px;"><label><input type="checkbox" value="{$user.name}" name="user_id_{$user.id}">{$user.name}</label></div>
+            </volist>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10"> </div>
+      </div>
+      <div class="form-group">
+        <label for="name"class="col-lg-2 control-label">留言内容</label>
+        <div class="col-lg-10 ">
+          <textarea type="text" class="form-control" name = "content" rows="9"   ></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name"class="col-lg-2 control-label"></label>
+        <div class="col-lg-1">
+          <button type="reset" class="btn  btn-primary  ">重置</button>
+        </div>
+        <div class="col-lg-1">
+          <button type="submit" class="btn  btn-primary  ">发送</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/Public/html/js/jquery.autocompleter.min.js" type="text/javascript"></script>

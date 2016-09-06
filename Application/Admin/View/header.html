@@ -1,0 +1,123 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>FSC解决方案::{$title|default='后台管理'}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/Public/admin/css/css.css" rel="stylesheet">
+    <link href="/Public/admin/css/page.css" rel="stylesheet">
+    <!--<link href="/Public/admin/css/style.css" type="text/css" rel="stylesheet" media="all">-->
+
+
+    <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $.post('{:U("/Admin/Api/teacher_class")}', {}, function (data) {
+            $("#homework_loading").hide();
+            if (data.result.length != 0)
+                $.each(data['result'], function (index, value) {
+                    $("#hwList").append("<li><a href='' id='hwHref" + index + "'> 布置" + value.course_name + "作业</a></li>");
+                    $("#hwHref" + index + "").attr("href", "{:U('Homework/assignHw')}?course_id=" + value.course_id + "");
+                }); else $("#homework_null").show();
+        }, 'json');
+
+    });
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="#">FSC</a></div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" style="z-index:20"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> 作业管理
+                    <span class="caret"></span> </a>
+                    <ul class="dropdown-menu" id="hwList">
+                        <li><a href="{:U('Homework/list')}">作业列表</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="homework_loading"><a href="#">加载中</a></li>
+                        <li id="homework_null" style="display: none;"><a href="#">没有可发布的科目</a></li>
+
+                    </ul>
+                </li>
+                </li>
+                <egt name="ACCESS" value="$Think.config.MOD_NEWS_LEVEL">
+                <li class="dropdown "><a class="dropdown-toggle" data-toggle="dropdown" href="#"> 新闻公告 <span
+                        class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{:U('News/list')}">消息列表</a></li>
+                        <li><a href="{:U('News/assignNews')}">发布消息</a></li>
+                    </ul>
+                </li>
+                    </egt>
+
+                <egt name="ACCESS" value="$Think.config.MOD_SCHOOL_MESSAGE_LEVEL">
+
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> 机构管理
+                    <span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{:U('Department/list')}">机构列表</a></li>
+                        <li><a href="{:U('Department/assignDe')}">机构管理</a></li>
+                    </ul>
+                </li>
+
+                    </egt>
+                </li>
+                <li class="dropdown "><a class="dropdown-toggle" data-toggle="dropdown" href="#"> 交流互动
+                    <span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{:U('Message/receive')}">收件箱</a></li>
+                        <li><a href="{:U('Message/send')}">发件箱</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{:U('Message/send_message')}">发送留言</a></li>
+                    </ul>
+                </li>
+                <egt name="ACCESS" value="$Think.config.ADD_USER_ACCOUNT_LEVEL">
+                <li><a href="{:U('User/index')}"> 用户管理</a>
+                </li>
+                </egt>
+                <egt name="ACCESS" value="$Think.config.IMPORT_LEVEL">
+
+                <li><a href="{:U('Import/index')}"> 导入数据</a>
+                </li></egt>
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 个人信息 <span
+                        class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{:U('User/detail')}">
+                            个人主页
+                        </a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{:U('Admin/login/logout')}">
+                            登出
+                        </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+{__CONTENT__}
+<!-- /.container -->
+
+</body>
+</html>

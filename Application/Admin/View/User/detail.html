@@ -1,0 +1,126 @@
+<layout name="header"/>
+
+<div class="container">
+    <div class="starter-template">
+
+        <div align="right">
+            <button type="button" class="btn btn-primary btn-lg right" data-toggle="modal" data-target="#myModal">
+                编辑
+            </button>
+        </div>
+        <h2 class="page-header">{$teacher.name|default="无名"}</h2>
+
+        <div class="row">
+            <div class="col-md-1"><b>学历</b></div>
+            <div class="col-md-9">{$teacher.education}</div>
+
+        </div>
+        <hr align="left" size="5" color="#808080">
+
+        <div class="row">
+            <div class="col-md-1"><b>毕业院校</b></div>
+            <div class="col-md-9">{$teacher.school}</div>
+
+        </div>
+
+        <hr align="left" size="5" color="#808080">
+
+        <div class="row">
+            <div class="col-md-1"><b>电话</b></div>
+            <div class="col-md-9">{$teacher.phone}</div>
+
+        </div>
+
+        <hr align="left" size="5" color="#808080">
+
+
+        <div class="row">
+            <div class="col-md-1"><b>邮箱</b></div>
+            <div class="col-md-9">{$teacher.email}</div>
+
+        </div>
+
+
+        <!--<ul class="list-group ">-->
+        <!--<li>-->
+        <!--<ul>-->
+        <!--<li><b>学历 </b></li>-->
+        <!--<li>硕士</li>-->
+        <!--</ul>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<ul>-->
+        <!--<li><b>毕业院校 </b></li>-->
+        <!--<li>北京师范大学</li>-->
+        <!--</ul>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<ul>-->
+        <!--<li><b>电话 </b></li>-->
+        <!--<li>+00 111 222 3333</li>-->
+        <!--</ul>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<ul>-->
+        <!--<li><b>邮箱 </b></li>-->
+        <!--<li><a href="mailto:example@mail.com"> mail@example.com</a></li>-->
+        <!--</ul>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<ul>-->
+        <!--<li><b>所带班级 </b></li>-->
+        <!--<li>14011301/14011302/14011303班</li>-->
+        <!--</ul>-->
+        <!--</li>-->
+        <!--</ul>-->
+
+        <h4 class="page-header">签名</h4>
+
+            {$teacher.signature_markdown|default="无"}
+
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="{:U('/Admin/User/edit')}" method="post">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">编辑信息</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <h4>学历</h4>
+                    <input type="text" name="education" value="{$teacher.education}" class="form-control input-lg" placeholder="请输入您的学历" required
+                           autofocus>
+
+                    <h4>毕业院校</h4>
+                    <input type="text" name="school" value="{$teacher.school}" class="form-control input-lg" placeholder="请输入您的毕业院校" required>
+                    <h4>电话</h4>
+
+                    <input type="text" name="phone" value="{$teacher.phone}" class="form-control input-lg" placeholder="请输入您的电话" required>
+                    <h4>邮箱</h4>
+
+                    <input type="email" name="email" value="{$teacher.email}" class="form-control input-lg" placeholder="请输入您的邮箱" required>
+
+                    <hr>
+                    <h4>个人简介</h4>
+                    <textarea type="text" name="signature"  class="form-control" rows="9">{$teacher.signature}</textarea>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary">保存</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

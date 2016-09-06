@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head lang="zh-CN">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0"/>
+    <title>杭州外国语学校</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" id="page_favionc">
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/Public/html/css/main.css"/>
+
+</head>
+<html>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="{:U('Index/index')}" style="color:black">首页</a></li>
+            <li><a href="{:U('Department/department')}" style="color:black">机构设置</a></li>
+            <li><a href="{:U('News/list')}" style="color:black" class="active">信息公告</a></li>
+            <li><a href="{:U('Index/index')}#cta" style="color:black">关于我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Content -->
+        <section id="content" class="main">
+
+            <div class="row">
+                <div class="2u 12u$(medium)">
+                    <div class="list-group">
+                        <volist name="type_list" id="type">
+                            <eq name="type.id" value="$type_id">
+                                <a href="{:U('News/list')}?type={$type.id}" class="list-group-item active">{$type.name}</a>
+                                <else />
+                                <a href="{:U('News/list')}?type={$type.id}" class="list-group-item">{$type.name}</a>
+                            </eq>
+
+
+                        </volist>
+
+                    </div>
+                </div>
+
+                <div class="10u 12u$(medium)">
+                    {__CONTENT__}
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">Copyright &copy; 杭州外国语学校. Design: FSC项目组</p>
+    </footer>
+
+
+</div>
+
+
+</body>
+</html>
+

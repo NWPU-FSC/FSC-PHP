@@ -1,0 +1,68 @@
+<layout name="header"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div class="container " style="padding-top:40px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header" align="left">作业列表</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="text-muted bootstrap-admin-box-title">作业列表</div>
+                </div>
+                <div class="bootstrap-admin-panel-content">
+                    <table class="table table-hover" style="vertical-align:middle;">
+                        <thead>
+                        <tr>
+                            <th width="13"></th>
+                            <th width="150">　科目</th>
+                            <th width="250">作业标题</th>
+                            <th width="220">作业日期</th>
+                            <th width="350">班级</th>
+                            <th width="200">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="hw" id="hwList">
+                            <tr>
+                                <td><input type="checkbox" class="checkbox"/></td>
+                                <td>【{$hwList.course_name}】</td>
+                                <td>{$hwList.title}</td>
+                                <td>{$hwList.date}</td>
+                                <if condition="$hwList.class_name eq NULL">
+                                    <td>无</td>
+                                    <else/>
+                                    <td>{$hwList.class_name}</td>
+                               </if>
+                                <td class="actions"><a
+                                        href="{:U('Homework/editHw')}?id={$hwList.id}">
+                                    <button class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i> 编辑
+                                    </button>
+                                </a> <a href="{:U('Homework/delete')}?id={$hwList.id}">
+                                    <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> 删除
+                                    </button>
+                                </a></td>
+
+                            </tr>
+                       </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

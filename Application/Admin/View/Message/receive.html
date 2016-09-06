@@ -1,0 +1,90 @@
+<layout name="header"/>
+
+<div class="container " style="padding-top:40px;">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <h2 class="page-header">我收到的留言</h2>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th width="250">留言内容</th>
+                    <th width="250">来源</th>
+                    <th width="200">状态</th>
+                    <th width="200">留言时间</th>
+                    <th width="250">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <volist name="message_list" id="data">
+                    <tr>
+                        <td><a href="{:U('Message/detail')}?id={$data.id}">{$data.title}</a></td>
+                        <td>{$data.sender_name}</td>
+                        <td>{$data.has_read_name}</td>
+
+                        <td>{$data.time}</td>
+                        <td class="actions">
+
+
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                    data-target="#replyModel" data-whatever="{$data.title}" data-id="{$data.id}"><i
+                                    class="glyphicon glyphicon-pencil"></i> 回复
+                            </button>
+</td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+
+        </div>
+        <include file="Public/page"/>
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="replyModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <form action="{:U('Message/post')}" method="post">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="post_id" name="message_id" style="display: none">
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="control-label">回复内容:</label>
+                        <textarea class="form-control" id="content" name="content"></textarea>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+</div>
+
+<script>
+    $('#replyModel').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);// Button that triggered the modal
+        var id = button.data('id');
+        var recipient = button.data('whatever');// Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        modal.find('.modal-title').text('回复主题:' + recipient);
+        modal.find('.modal-body input').val(recipient);
+        modal.find('#post_id').val(id)
+    })
+
+</script>

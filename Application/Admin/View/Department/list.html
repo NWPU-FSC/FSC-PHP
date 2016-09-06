@@ -1,0 +1,62 @@
+<layout name="header"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+<div class="container " style="padding-top:0px;">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h2 class="page-header" align="left">机构列表</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    机构列表
+
+
+                </div>
+                <div class="bootstrap-admin-panel-content">
+                    <table class="table table-hover" style="vertical-align:middle;">
+                        <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th width="200">机构名称</th>
+                            <th width="620">主要职能</th>
+                            <th width="500">地址</th>
+                            <th width="200">管理</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="list" id="dList">
+                            <tr>
+                                <td></td>
+                                <td>{$dList.name}</td>
+                                <td>{$dList.description}</td>
+                                <td>{$dList.location}</td>
+                                <td class="actions">
+                                    <a href="{:U('Department/editDe')}?id={$dList.id}" >
+                                        <button class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i> 编辑
+                                        </button>
+                                    </a> <a href="{:U('Department/delete')}?id={$dList.id}" onclick="return confirm('是否确认删除？');">
+                                    <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> 删除
+                                    </button>
+                                </a></td>
+                            </tr>
+                        </volist>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="sabrosus">
+        {$page}
+    </div>
+</div>
+</div>
+
+</body>
+</html>
